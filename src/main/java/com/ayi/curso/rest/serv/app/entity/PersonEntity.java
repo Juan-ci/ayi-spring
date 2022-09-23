@@ -6,7 +6,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -52,4 +51,6 @@ public class PersonEntity implements Serializable {
     @Column(name = "fec_modificacion")
     private LocalDate dateModified;
 
+    @Column(name = "soft_delete")
+    private boolean softDelete = Boolean.FALSE;
 }

@@ -37,12 +37,18 @@ public class PersonResponseDTO implements Serializable {
     @ApiModelProperty(position = 4, notes = "Non negative value, The number document is required.")
     private Integer numberDocument;
 
-    @ApiModelProperty(position = 5, notes = "Date Created Person")
+    @ApiModelProperty(position = 5, notes = "Non negative value, The date born is required.")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+    private LocalDate dateBorn;
+
+    @ApiModelProperty(position = 6, notes = "Date Created Person")
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private LocalDate dateCreated;
 
-    @ApiModelProperty(position = 6, notes = "Date Modified Person")
+    @ApiModelProperty(position = 7, notes = "Date Modified Person")
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private LocalDate dateModified;
 
+    @ApiModelProperty(position = 8, notes = "SoftDelete Person")
+    private boolean softDelete;
 }
